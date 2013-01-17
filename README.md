@@ -1,4 +1,4 @@
 rlog
 ====
 
-Log parsing utility for Rails logs
+LogTool parsing utility for Rails logs
