@@ -23,6 +23,11 @@ module LogTool
       /^Started (GET|POST|PUT|DELETE) ".+?" for (\d\d?\d?.\d\d?\d?.\d\d?\d?.\d\d?\d?) at .*$/
     end
 
+    def self.head_2_3 # old rails head
+      #$1 = IP, $2 = method
+      /^Processing .+? \(for (\d\d?\d?.\d\d?\d?.\d\d?\d?.\d\d?\d?) at .*?(GET|POST|PUT|DELETE).*$/
+    end
+
     def self.tail
       # $1 = response
       time = /\d+(ms|s)/

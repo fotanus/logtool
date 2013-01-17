@@ -24,6 +24,12 @@ module LogTool
             block.method = $1
             block.ip = $2
             block.text = line + "\n"
+          elsif line =~ Block.head_2_3
+            blocks << block if block
+            block = Block.new
+            block.method = $2
+            block.ip = $1
+            block.text = line + "\n"
           elsif block and line =~ Block.tail
             block.response = $1
             block.time = $2
